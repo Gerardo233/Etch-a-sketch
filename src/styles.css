@@ -4,3 +4,25 @@
     box-sizing: border-box;
 }
 
+/*Styles for the header*/
+.container {
+    width: 90%;
+    height: 100vh;
+    border: 1px dashed black;
+    margin: 0 auto;
+}
+
+#header {
+    height: 150px;
+    width: 100%;
+}
+
+.web-title{
+    font-size: 4rem;
+    font-family: 'Playpen Sans', cursive;
+    text-align: center;
+    color: #03346E;
+    font-weight: 700;
+    font-style: italic;
+}
+
