@@ -21,8 +21,34 @@
     font-size: 4rem;
     font-family: 'Playpen Sans', cursive;
     text-align: center;
-    color: #03346E;
+    color: #4090f3;
     font-weight: 700;
     font-style: italic;
 }
 
+/*Styles for the controllers*/
+.controllers{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controllers > .ctrl-grid, .ctrl-color{
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    gap: 10px;
+    font-family: "DM Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #134B70;
+}
