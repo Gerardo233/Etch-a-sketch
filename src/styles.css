@@ -7,9 +7,10 @@
 /*Styles for the header*/
 .container {
     width: 90%;
-    height: 100vh;
+    height: auto;
     border: 1px dashed black;
     margin: 0 auto;
+    padding: 10px;
 }
 
 #header {
@@ -31,7 +32,7 @@
     width: 100%;
     height: auto;
     padding: 20px;
-    border: 1px solid blue;
+    
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -44,11 +45,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
+
     gap: 10px;
     font-family: "DM Mono", monospace;
     font-weight: 500;
     font-style: normal;
     font-size: 1.5rem;
     color: #134B70;
+}
+
+/*Styles for the grid area*/
+.grid-container {
+    width: 1000px;
+    height: 900px;
+    background-color: #4090f3;;
+    margin: 0 auto;
+    border-radius: 25px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-content{
+    width: 900px;
+    height: 800px;
+    background-color: #fcf3e6;
 }
