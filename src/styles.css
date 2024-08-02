@@ -8,7 +8,6 @@
 .container {
     width: 90%;
     height: auto;
-    border: 1px dashed black;
     margin: 0 auto;
     padding: 10px;
 }
@@ -58,7 +57,7 @@
 .grid-container {
     width: 1000px;
     height: 900px;
-    background-color: #4090f3;;
+    background-color: #4090f3;
     margin: 0 auto;
     border-radius: 25px;
     margin-top: 5px;
@@ -71,4 +70,28 @@
     width: 900px;
     height: 800px;
     background-color: #fcf3e6;
+}
+
+/*Styles for the buttons*/
+.buttons-container{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons-container > #clean, #new{
+    width: 10%;
+    font-size: 1.5rem;
+    font-family: "DM Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #4090f3;
+    border-radius: 15px;
+    border:none;
+    color:#fcf3e6;
+    padding: 10px;
 }
