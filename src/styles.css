@@ -95,3 +95,17 @@
     color:#fcf3e6;
     padding: 10px;
 }
+
+
+/**/
+.square{
+    display: flex;
+}
+
+.childSquare{
+    content: "";
+}
+
+.childSquare:hover{
+    cursor: pointer;
+}
