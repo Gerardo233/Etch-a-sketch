@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Etch-Sketch</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <header id="main-header">
+        <h1 class="web-title">Etch-a-Sketch</h1>
+      </header>
 
+      <section class="controllers">
+        <div class="ctrl-grid">
+          <label for="grid">Grid Size:</label>
+          <input
+            type="range"
+            name=""
+            id="grid"
+            min="16"
+            max="64"
+            step="16"
+          />
+         <p class="grid-value-range"></p>
+        </div>
+        <div class="ctrl-color">
+          <label for="color">Color:</label>
+          <input type="color" id="color" />
+        </div>
+      </section>
 
-<script src="logic.js"></script>
-</body>
+      <main class="grid-container">
+        <div class="grid-content"></div>
+      </main>
+
+      <section class="buttons-container">
+        <button id="clean">Clear</button>
+
+      </section>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
 </html>
