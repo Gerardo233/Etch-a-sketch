@@ -1,58 +1,50 @@
+//Variables for the containers of the inputs
 let controllers = document.querySelector('.controllers');
 let gridContainer = document.querySelector('.grid-content');
 
-let gridSize = document.querySelector('#grid');
-
-let myEvent = new CustomEvent('change');
-
-//Controllers inputs variables
+//Variables for the inputs (range and color)
 const gridInput = document.querySelector('#grid');
 const colorInput = document.querySelector('#color');
 
-// Set default values
-const defaultGridSize = 16;
-const defaultColor = '#000000';
+//Variables for the buttons
+const clearBtn = document.getElementById("clean");
 
-/*Equivalencias de medidas*/
-let containerX = gridContainer.clientWidth;
-let containerY = gridContainer.clientHeight;
 
-let selectedColor = '';
+// Default values for the inputs
+const defaultGridSize = 16; //Init default value for the range (16 x 16 grid)
+let defaultColor = '#000000'; //Init default color value for the color input
 
-//Verificar
-var isClicked = false;
+//Obtaining the width and height of the container in which the grid will be created
+let containerX = gridContainer.clientWidth; //X
+let containerY = gridContainer.clientHeight;//Y
 
+
+//Variable to check where to start coloring or stop
+let isClicked = false;
+
+//Initialize in window load
 window.addEventListener('load', function (e) {
-  gridSize.value = defaultGridSize;
-  colorInput.value = defaultColor;
-  selectedColor = defaultColor;
-
-  // Trigger the change event to initialize the grid
-  createSquares(defaultGridSize, gridContainer);
+  initValues()
 });
 
 controllers.addEventListener('change', function (e) {
   let color;
   switch (e.target.id) {
     case 'grid':
+      document.querySelector(".grid-value-range").textContent = gridInput.value.toString();
       createSquares(e.target.value, gridContainer);
       break;
 
     case 'color':
       color = e.target.value;
-      selectedColor = catchColor(color);
+      defaultColor = catchColor(color);
       break;
   }
 });
 
 gridContainer.addEventListener('mouseover', function (e) {
   if (isClicked) {
-    if (
-      e.target.classList.contains('square') ||
-      e.target.classList.contains('childSquare')
-    ) {
-      e.target.style.backgroundColor = selectedColor;
-    }
+      e.target.style.backgroundColor = defaultColor;
   }
 });
 
@@ -61,9 +53,13 @@ gridContainer.addEventListener('click', function (e) {
     isClicked = false;
   } else if (isClicked === false) {
     isClicked = true;
-    e.target.style.backgroundColor = selectedColor;
+    e.target.style.backgroundColor = defaultColor;
   }
 });
+
+clearBtn.addEventListener("click", function () {
+  initValues();
+})
 
 function createSquares(range, parent) {
   parent.innerHTML = ''; // Equivalent to jQuery's empty()
@@ -98,4 +94,16 @@ function placeSquares(container, range) {
 
 function catchColor(color) {
   return color;
+}
+
+function initValues(){
+  gridInput.value = defaultGridSize; //Placing a default grid size
+  colorInput.value = defaultColor; //Placing a default color
+
+  //Start creating the grid
+  createSquares(defaultGridSize, gridContainer);
+
+  document.querySelector(".grid-value-range").textContent = gridInput.value.toString();
+
+ isClicked = false;
 }

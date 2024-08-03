@@ -109,3 +109,14 @@
 .childSquare:hover{
     cursor: pointer;
 }
+
+#clean:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#clean{
+    opacity: 0.5;
+    transition:ease-in 0.3s;
+    transform: translateZ(-100px);
+}
